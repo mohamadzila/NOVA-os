@@ -1,0 +1,13 @@
+* {
+  font-family: Inter, "Noto Sans", sans-serif;
+  font-size: 12px;
+}
+window#waybar {
+  background: rgba(15, 19, 23, 0.94);
+  color: #F3F0E8;
+}
+#custom-nova, #clock, #network, #pulseaudio, #battery, #tray { padding: 0 10px; }
+#custom-nova { color: #78DCE8; font-weight: 700; letter-spacing: 0.08em; }
+#workspaces button { padding: 0 7px; color: #8F9AA3; background: transparent; border: none; }
+#workspaces button.focused { color: #F3F0E8; background: #26313A; }
+#clock { color: #D8D4C9; }
