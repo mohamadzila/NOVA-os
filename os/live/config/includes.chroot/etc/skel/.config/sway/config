@@ -1,0 +1,49 @@
+set $mod Mod4
+
+font pango:Inter 11
+default_border pixel 1
+default_floating_border pixel 1
+gaps inner 8
+gaps outer 12
+smart_gaps on
+focus_follows_mouse yes
+
+client.focused #26313A #26313A #F3F0E8 #78DCE8 #26313A
+client.unfocused #161B20 #161B20 #9BA5AE #161B20 #161B20
+client.focused_inactive #20272D #20272D #B8C0C7 #20272D #20272D
+client.urgent #4A2528 #4A2528 #FFF4F0 #E26D78 #4A2528
+
+exec_always --no-startup-id waybar
+exec --no-startup-id nm-applet
+exec --no-startup-id xdg-user-dirs-update
+
+bindsym $mod+d exec wofi --show drun --prompt "NOVA"
+bindsym $mod+Return exec foot
+bindsym $mod+b exec chromium --no-first-run
+bindsym $mod+e exec thunar
+bindsym $mod+Shift+q kill
+bindsym $mod+f fullscreen
+bindsym $mod+space floating toggle
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'Leave NOVA?' -b 'Exit' 'swaymsg exit'"
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
