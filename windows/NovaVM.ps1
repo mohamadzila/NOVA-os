@@ -21,7 +21,6 @@ $qemu = Get-Command qemu-system-x86_64.exe -ErrorAction SilentlyContinue
 if (-not $qemu) {
   Fail "QEMU was not found on PATH. Install a current QEMU build first."
 }
-
 if (-not (Test-Path -LiteralPath $Disk)) {
   Fail "Disk image not found: $Disk"
 }
@@ -38,11 +37,12 @@ if ($vmp -and $vmp.State -ne "Enabled") {
   Write-Host "Enable it in Windows Features for WHPX acceleration."
 }
 
+$memory = $MemoryGB.ToString() + "G"
 $args = @(
   "-machine", "q35,accel=whpx",
   "-cpu", "max",
   "-smp", "$Cores",
-  "-m", ( "$" + "{MemoryGB}G" ),
+  "-m", $memory,
   "-drive", "file=$Disk,if=virtio,format=qcow2",
   "-device", "virtio-vga",
   "-nic", "user,model=virtio",
