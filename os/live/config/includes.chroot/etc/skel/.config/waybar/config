@@ -1,0 +1,15 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 8,
+  "modules-left": ["custom/nova", "sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "pulseaudio", "battery", "tray"],
+  "custom/nova": {"format": "NOVA", "tooltip": false},
+  "clock": {"format": "{:%a  %d %b   %H:%M}", "tooltip-format": "{:%A, %d %B %Y}"},
+  "network": {"format-wifi": "⌁ {signalStrength}%", "format-ethernet": "⇄", "format-disconnected": "offline", "tooltip-format": "{ifname}: {essid}"},
+  "pulseaudio": {"format": "vol {volume}%", "format-muted": "muted"},
+  "battery": {"format": "bat {capacity}%"},
+  "tray": {"spacing": 6}
+}
