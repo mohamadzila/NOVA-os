@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=NOVA OS Alpha 1
+Comment=Open a NOVA project terminal
+Exec=foot
+Terminal=false
+Icon=utilities-terminal
+Categories=System;
